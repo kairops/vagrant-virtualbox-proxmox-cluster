@@ -26,6 +26,7 @@ Vagrant.configure("2") do |config|
                 v.customize ['modifyvm', :id, '--ioapic', 'on']
                 v.customize ['modifyvm', :id, '--natdnshostresolver1', 'off']
                 v.customize ['modifyvm', :id, '--nictype1', 'virtio']
+                v.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all']
             end
             node_conf.vm.provision "shell", run: "once", inline: "/vagrant/bin/provision_pve6_node.sh"
             node_conf.vm.provision "shell", run: "once", inline: "reboot"
