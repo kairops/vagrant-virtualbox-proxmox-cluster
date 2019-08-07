@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.3.0 (2019-08-07)
+
+### New
+
+* Add lxc play script ([d7c3873](https://github.com/kairops/vagrant-virtualbox-proxmox-cluster/commit/d7c3873))
+
+### Build
+
+* Update Auto Release Log adding v0.3.0 info with JPL ([b65069c](https://github.com/kairops/vagrant-virtualbox-proxmox-cluster/commit/b65069c))
+
+### Docs
+
+* Review documentation ([dcd7c88](https://github.com/kairops/vagrant-virtualbox-proxmox-cluster/commit/dcd7c88))
+* Generate v0.2.1 changelog with JPL ([2ceb672](https://github.com/kairops/vagrant-virtualbox-proxmox-cluster/commit/2ceb672))
+
 ## v0.2.1 (2019-08-07)
 
 ### Update
