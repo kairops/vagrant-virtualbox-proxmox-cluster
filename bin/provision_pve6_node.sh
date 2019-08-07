@@ -49,6 +49,3 @@ apt update
 DEBIAN_FRONTEND=noninteractive apt -y full-upgrade
 DEBIAN_FRONTEND=noninteractive apt install -y proxmox-ve postfix open-iscsi
 DEBIAN_FRONTEND=noninteractive apt remove -y os-prober
-
-# Configure ssh
-echo "StrictHostKeyChecking no" >> ~/.ssh/config
