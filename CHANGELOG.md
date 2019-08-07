@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.3.1 (2019-08-07)
+
+### Fix
+
+* Download the ubuntu template before use it ([ea31990](https://github.com/kairops/vagrant-virtualbox-proxmox-cluster/commit/ea31990))
+
+### Build
+
+* Update Auto Release Log adding v0.3.1 info with JPL ([1586348](https://github.com/kairops/vagrant-virtualbox-proxmox-cluster/commit/1586348))
+
+### Docs
+
+* Generate v0.3.0 changelog with JPL ([69abb5a](https://github.com/kairops/vagrant-virtualbox-proxmox-cluster/commit/69abb5a))
+
 ## v0.3.0 (2019-08-07)
 
 ### New
