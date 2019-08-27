@@ -1,5 +1,24 @@
 # Changelog
 
+## v1.0.0 (2019-08-27)
+
+### Breaking
+
+* Major refactor, fully automating the pve cluster creation ([37f7c3c](https://github.com/kairops/vagrant-virtualbox-proxmox-cluster/commit/37f7c3c))
+
+### New
+
+* Add devcontrol scripts ([4278f47](https://github.com/kairops/vagrant-virtualbox-proxmox-cluster/commit/4278f47))
+* Add pve6-box Vagrantfile ([44c9c7b](https://github.com/kairops/vagrant-virtualbox-proxmox-cluster/commit/44c9c7b))
+
+### Build
+
+* Update Auto Release Log adding v1.0.0 info with JPL ([dc727a8](https://github.com/kairops/vagrant-virtualbox-proxmox-cluster/commit/dc727a8))
+
+### Docs
+
+* Generate v0.3.1 changelog with JPL ([0ed7d48](https://github.com/kairops/vagrant-virtualbox-proxmox-cluster/commit/0ed7d48))
+
 ## v0.3.1 (2019-08-07)
 
 ### Fix
