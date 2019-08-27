@@ -1,5 +1,28 @@
 # Changelog
 
+## v1.1.0 (2019-08-27)
+
+### New
+
+* Add cluster-status devcontrol action ([458bbd3](https://github.com/kairops/vagrant-virtualbox-proxmox-cluster/commit/458bbd3))
+
+### Update
+
+* Change reload method on cluster build ([9afa81e](https://github.com/kairops/vagrant-virtualbox-proxmox-cluster/commit/9afa81e))
+* Remove linked clone ([2b94ebf](https://github.com/kairops/vagrant-virtualbox-proxmox-cluster/commit/2b94ebf))
+
+### Fix
+
+* Typo in cluster-ssh action ([2f5ce97](https://github.com/kairops/vagrant-virtualbox-proxmox-cluster/commit/2f5ce97))
+
+### Build
+
+* Update Auto Release Log adding v1.1.0 info with JPL ([ba38a79](https://github.com/kairops/vagrant-virtualbox-proxmox-cluster/commit/ba38a79))
+
+### Docs
+
+* Generate v1.0.0 changelog with JPL ([0057669](https://github.com/kairops/vagrant-virtualbox-proxmox-cluster/commit/0057669))
+
 ## v1.0.0 (2019-08-27)
 
 ### Breaking
