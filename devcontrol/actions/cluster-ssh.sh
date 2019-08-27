@@ -15,7 +15,7 @@ function cluster-ssh() {
 
     # Init
     local briefMessage="Cluster node ssh"
-    local helpMessage="""Aºccess to one of the cluster node using ssh
+    local helpMessage="""Access to one of the cluster node using ssh
 
 Example:
 
