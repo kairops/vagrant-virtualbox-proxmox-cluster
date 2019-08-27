@@ -4,20 +4,28 @@ Build a proxmox 6.0 cluster using Vagrant for testing purposes
 
 ## Prerequisites
 
-- Virtualbox installed
-- Vagrant installed
+- [Virtualbox](https://www.virtualbox.org) installed
+- [Vagrant](https://www.vagrantup.com) installed
+- [Teecke devcontrol](https://github.com/teecke/devcontrol) installed
 
 ## Instructions
 
 1. Clone the repository
-2. Execute `bin/vagrantup.sh` script and wait for completion
-3. Access to the nodes with "root" uaser and "vagrant" password
+2. Execute `devcontrol box-build` and wait for completion. A new vagrant box called "_proxmox-ve-cluster_" will be created.
+3. Execute `devcontrol cluster-build` and wait for comnpletion. The pve cluster "pvetest" will be created.
+4. Access to the nodes with "root" uaser and "vagrant" password
 
    - Node 1: <https://localhost:18006>
    - Node 2: <https://localhost:28006>
    - Node 3: <https://localhost:38006>
 
-4. Enjoy!
+5. Access to the ssh console of the nodes with
+
+   $ devcontrol cluster-ssh node1
+   $ devcontrol cluster-ssh node2
+   $ devcontrol cluster-ssh node3
+
+6. Enjoy!
 
 ## What do you get
 
@@ -31,7 +39,6 @@ You can deploy LXC containers (KVM also if you have nested virtualizaation enabl
 
 ## Where to go now
 
-- [Configure the PVE cluster](doc/pve-cluster-howto.md)
 - [Play with LXC containers](doc/lxc-howto.md)
 
 ## Todo

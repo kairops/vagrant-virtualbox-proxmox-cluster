@@ -1,26 +1,22 @@
 #!/bin/bash
 
-# @description Build the pve cluster
+# @description Destroy the pve cluster
 #
 # @example
-#   build-cluster
+#   cluster-destroy
 #
 # @arg $1 Task: "brief", "help" or "exec"
 #
 # @exitcode The exit code of the statements of the action
+# @exitcode 1  If the task is not implemented
 #
 # @stdout "Not implemented" message if the requested task is not implemented
 #
-function build-cluster() {
+function cluster-destroy() {
 
     # Init
-    local briefMessage="Cluster build"
-    local helpMessage="""Build the pve cluster
-
-    1. Build the 'proxmox-ve-amd64' vagrant box based on the 'debian/buster64' box
-    2. Add the 'proxmox-ve-amd64' to the user boxes
-    3. Build the pve cluster based on the 'proxmox-ve-amd64'
-"""
+    local briefMessage="Cluster removal"
+    local helpMessage="Destroy the pve cluster, removing all data and configurations"
 
     # Task choosing
     case $1 in
@@ -31,7 +27,8 @@ function build-cluster() {
             showHelpMessage ${FUNCNAME[0]} "$helpMessage"
             ;;
         exec)
-            echo "TBD: build cluster"
+            cd cluster
+	    vagrant destroy -f
             ;;
         *)
             showNotImplemtedMessage $1 ${FUNCNAME[0]}
@@ -40,4 +37,4 @@ function build-cluster() {
 }
 
 # Main
-build-cluster "$@"
+cluster-destroy "$@"

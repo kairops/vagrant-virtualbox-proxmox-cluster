@@ -1,22 +1,36 @@
 #!/bin/bash
 
-# @description Destroy the pve cluster
+# @description Access to the ssh console of one of the cluster nodes
 #
 # @example
-#   destroy
+#   cluster-ssh node1
 #
 # @arg $1 Task: "brief", "help" or "exec"
 #
 # @exitcode The exit code of the statements of the action
-# @exitcode 1  If the task is not implemented
 #
 # @stdout "Not implemented" message if the requested task is not implemented
 #
-function destroy() {
+function cluster-ssh() {
 
     # Init
-    local briefMessage="Cluster removal"
-    local helpMessage="Destroy the pve cluster, removing all data and configurations"
+    local briefMessage="Cluster node ssh"
+    local helpMessage="""Aºccess to one of the cluster node using ssh
+
+Example:
+
+    $ devcontrol cluster-ssh node1
+
+    [...]
+
+    $ devcontrol cluster-ssh node2
+
+    [...]
+
+    $ devcontrol cluster-ssh node3
+
+    [...]
+"""
 
     # Task choosing
     case $1 in
@@ -27,7 +41,9 @@ function destroy() {
             showHelpMessage ${FUNCNAME[0]} "$helpMessage"
             ;;
         exec)
-            echo "TBD: Cluster removal"
+	    cd cluster
+	    shift
+	    vagrant ssh $@
             ;;
         *)
             showNotImplemtedMessage $1 ${FUNCNAME[0]}
@@ -36,4 +52,4 @@ function destroy() {
 }
 
 # Main
-destroy "$@"
+cluster-ssh "$@"

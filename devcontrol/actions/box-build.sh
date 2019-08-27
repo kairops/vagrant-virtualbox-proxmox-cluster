@@ -11,7 +11,7 @@
 #
 # @stdout "Not implemented" message if the requested task is not implemented
 #
-function build-box() {
+function box-build() {
 
     # Init
     local briefMessage="Build pve6 vagrant box"
@@ -28,14 +28,9 @@ function build-box() {
         exec)
             pushd pve6-box
             vagrant up
-            vagrant ssh -c "sudo apt-get clean
-            sudo dd if=/dev/zero of=/EMPTY bs=1M
-            sudo rm -f /EMPTY
-            cat /dev/null > ~/.bash_history
-            history -c
-            exit"
             rm -f proxmox-ve-amd64.box
             vagrant package --output proxmox-ve-amd64.box
+	    ls -l proxmox-ve-amd64.box
             vagrant box add -f proxmox-ve-amd64 proxmox-ve-amd64.box
             rm -f proxmox-ve-amd64 proxmox-ve-amd64.box
             vagrant destroy -f
@@ -48,4 +43,4 @@ function build-box() {
 }
 
 # Main
-build-box "$@"
+box-build "$@"

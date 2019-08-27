@@ -24,6 +24,14 @@ apt update
 apt -y full-upgrade
 apt install -y proxmox-ve postfix open-iscsi
 apt remove -y os-prober
+eval $(echo "sed -i 's/${IP}/127.0.1.1/g' /etc/hosts")
+
+# Prepare vm to build vagrant box
+apt-get clean
+dd if=/dev/zero of=/EMPTY bs=1M
+rm -f /EMPTY
+cat /dev/null > ~/.bash_history
+history -c
 SCRIPT
 
 Vagrant.configure("2") do |config|
@@ -45,6 +53,5 @@ Vagrant.configure("2") do |config|
             v.customize ['modifyvm', :id, '--nictype1', 'virtio']
         end
         config.vm.provision "shell", run: "once", inline: $provision_pve6
-        config.vm.provision "shell", run: "once", inline: "reboot"
     end
 end

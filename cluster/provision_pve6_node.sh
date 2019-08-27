@@ -34,18 +34,3 @@ for NODE in 1 2 3; do
 done
 sed -i "s/^127.0.1.1/#127.0.1.1/g" /etc/hosts
 
-# Update system
-apt update
-apt -y full-upgrade
-apt -y install vim
-
-# Set root passwd
-echo "root:vagrant"|chpasswd
-
-# Install pve6
-echo "deb http://download.proxmox.com/debian/pve buster pve-no-subscription" > /etc/apt/sources.list.d/pve-install-repo.list
-wget http://download.proxmox.com/debian/proxmox-ve-release-6.x.gpg -O /etc/apt/trusted.gpg.d/proxmox-ve-release-6.x.gpg
-apt update
-DEBIAN_FRONTEND=noninteractive apt -y full-upgrade
-DEBIAN_FRONTEND=noninteractive apt install -y proxmox-ve postfix open-iscsi
-DEBIAN_FRONTEND=noninteractive apt remove -y os-prober
