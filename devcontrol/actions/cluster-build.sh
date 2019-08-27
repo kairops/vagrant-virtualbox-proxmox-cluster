@@ -31,16 +31,14 @@ function cluster-build() {
             showHelpMessage ${FUNCNAME[0]} "$helpMessage"
             ;;
         exec)
-	    cd cluster
-	    vagrant up
+            cd cluster
+            vagrant up
             for vm in node1 node2 node3; do
-	        vagrant ssh ${vm} -c "sudo /vagrant/provision_pve6_node.sh"
-	    done
-	    for vm in node1 node2 node3; do
-	        vagrant reload ${vm}
-	    done
-	    for vm in node1 node2 node3; do
-	        vagrant ssh ${vm} -c "sudo /vagrant/configure_pve6_cluster.sh"
+                vagrant ssh ${vm} -c "sudo /vagrant/provision_pve6_node.sh"
+            done
+            vagrant reload
+            for vm in node1 node2 node3; do
+                vagrant ssh ${vm} -c "sudo /vagrant/configure_pve6_cluster.sh"
             done
             ;;
         *)
