@@ -1,3 +1,7 @@
+# DEPRECATED
+
+Please visit https://github.com/kairops/vagrant-virtualbox-proxmox-cluster
+
 # Proxmox Cluster LAB
 
 Build a proxmox 6.0 cluster using Vagrant for testing purposes
